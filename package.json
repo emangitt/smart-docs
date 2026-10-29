@@ -1,0 +1,66 @@
+{
+  "name": "smart-docs",
+  "version": "1.0.0",
+  "description": "Local-first MCP server that indexes your docs (md, txt, rst, PDF, code comments) into an offline semantic search index so AI agents can find, cite and answer from your real documentation.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Smart Docs contributors",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "docs",
+    "documentation",
+    "search",
+    "embeddings",
+    "rag",
+    "ai",
+    "claude",
+    "cursor"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "smart-docs": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run typecheck && npm run test && npm run build",
+    "dev": "tsc -p tsconfig.json --watch"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^4.3.2",
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "unpdf": "^1.9.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "typescript": "^5.8.3",
+    "vitest": "^5.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emangitt/smart-docs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/emangitt/smart-docs/issues"
+  }
+}

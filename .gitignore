@@ -1,0 +1,19 @@
+node_modules/
+dist/
+*.log
+*.tgz
+.DS_Store
+.npm-cache/
+test/.tmp/
+test/__snapshots__/
+
+# Secrets / env files (API keys live here, never in the repo)
+.env
+.env.*
+!.env.example
+.dev.vars
+
+# Local index and embedding model caches (SMART_DOCS_DATA_DIR may point into the repo)
+.smart-docs/
+.cache/
+.huggingface/
